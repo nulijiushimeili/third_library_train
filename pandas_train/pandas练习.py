@@ -49,16 +49,16 @@ print(s3)
 
 # 使用字典构建DataFrame
 data = {
-    "name":["Yase","Anqila","Daji","Xiaoqiao","Chengyaojin"],
-    "age":[30,20,15,18,40],
-    "address":["Eng","Yidali","Qianhudong","Wu","Tang"]
+    "name": ["Yase", "Anqila", "Daji", "Xiaoqiao", "Chengyaojin"],
+    "age": [30, 20, 15, 18, 40],
+    "address": ["Eng", "Yidali", "Qianhudong", "Wu", "Tang"]
 }
 df = pd.DataFrame(data)
 print(df)
 
 # 按照指定的列进行排序
-df = pd.DataFrame(data, columns=["name","address","age","gender"],
-                  index=["one","two","three","four","five"])
+df = pd.DataFrame(data, columns=["name", "address", "age", "gender"],
+                  index=["one", "two", "three", "four", "five"])
 print(df)
 print(df.columns)
 print(df["address"])
@@ -69,13 +69,13 @@ print(df.ix["three"])
 # 对列的值进行赋值
 df.gender = "male"
 print(df)
-df.age = np.arange(900,905)
+df.age = np.arange(900, 905)
 print(df)
 
 # 将列表或数组赋值给DataFrame某个列时,如果赋值的是一个Series,
 # 就会精确匹配DataFrame的索引,其他的空位置都会被天上确实值
 # 索引不存在的话不会创建新的行
-new_age = pd.Series([500,409,666],index=["tow","three","five"])
+new_age = pd.Series([500, 409, 666], index=["tow", "three", "five"])
 df.age = new_age
 print(df)
 
@@ -84,13 +84,13 @@ df["eastern"] = df.name == "Yase"
 print(df)
 
 # 使用del() 删除列
-del(df["eastern"])
+del (df["eastern"])
 print(df)
 
 # 使用嵌套字典创建DataFrame
 pop = {
-    "Nevada":{2001:2.4,2002:2.9},
-    "Ohio":{2000:1.5,2001:1.7,2002:3.6}
+    "Nevada": {2001: 2.4, 2002: 2.9},
+    "Ohio": {2000: 1.5, 2001: 1.7, 2002: 3.6}
 }
 df = pd.DataFrame(pop)
 print(df)
@@ -99,19 +99,3 @@ print(df.T)
 # 如果显式的指定了索引
 # df = pd.DataFrame(pop, index=[2001, 2002, 2000])
 # print(df) 运行出错
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
